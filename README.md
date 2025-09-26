@@ -44,13 +44,15 @@ Se houver tempo, será criada uma API RESTful com os seguintes endpoints princip
 | GET | /entregas/rotas | Visualizar rota e status de uma entrega |
 
 **Modelo de Pedido:**
+
+```json
 {
   "x": 10,
   "y": 5,
   "peso": 4.5,
   "prioridade": "Alta"
 }
-
+```
 ## 🛠️ Como Executar o Projeto
 
 ### Pré-requisitos
