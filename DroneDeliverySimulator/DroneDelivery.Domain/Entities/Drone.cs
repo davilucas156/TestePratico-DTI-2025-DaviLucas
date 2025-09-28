@@ -1,47 +1,69 @@
 ﻿using DroneDelivery.Domain.Enums;
 using DroneDelivery.Domain.Models;
+using System;
 
 namespace DroneDelivery.Domain.Entities
 {
-    /// <summary>
-    /// Representa a entidade Drone, com suas capacidades e estado atual.
-    /// </summary>
     public class Drone
     {
+        public const double ALCANCE_MAXIMO_ROTA_KM = 141.42;
+
         public Guid Id { get; } = Guid.NewGuid();
         public string Nome { get; set; }
 
-        // Regras Básicas
+        // Regras Básicas e de Simulação
         public double CapacidadeMaxKg { get; }
-        public double AlcanceMaxKm { get; }
+        public double AlcanceMaxKm { get; } 
         public double VelocidadeMediaKmh { get; set; }
-
-        // Estado Atual
         public DroneStatus Status { get; set; } = DroneStatus.Idle;
         public Ponto LocalizacaoAtual { get; set; } = Ponto.Base;
 
+        public double NivelBateriaPercentual { get; set; }
+        public double ConsumoKmPorPercentual { get; } = 2.0; 
+        public int CiclosDeRecargaRestantes { get; set; } = 0;
 
-
-        /// <summary>
-        /// Construtor para inicializar um drone com suas capacidades.
-        /// </summary>
-        public Drone(string nome, double capacidadeMaxKg, double alcanceMaxKm, double velocidade)
+        public Drone(string nome, double capacidadeMaxKg, double velocidade)
         {
             Nome = nome;
             CapacidadeMaxKg = capacidadeMaxKg;
-            AlcanceMaxKm = alcanceMaxKm;
             VelocidadeMediaKmh = velocidade;
-            // Validações de erro: Garantir que as capacidades são positivas
-            if (capacidadeMaxKg <= 0 || alcanceMaxKm <= 0)
+
+            AlcanceMaxKm = ALCANCE_MAXIMO_ROTA_KM;
+            NivelBateriaPercentual = 100.0; 
+
+            if (capacidadeMaxKg <= 0)
             {
-                throw new ArgumentException("Capacidade e Alcance devem ser valores positivos.");
+                throw new ArgumentException("Capacidade deve ser um valor positivo.");
             }
         }
 
-        // Método utilitário para visualização
+        public double GetAlcanceEfetivoKm(double pesoTotalCarga)
+        {
+            double percentual;
+
+            if (pesoTotalCarga <= 3.0)
+            {
+                percentual = 1.0; 
+            }
+            else if (pesoTotalCarga <= 6.0)
+            {
+                percentual = 0.80;
+            }
+            else if (pesoTotalCarga <= 10.0)
+            {
+                percentual = 0.70;
+            }
+            else
+            {
+                percentual = 0.60;
+            }
+
+            return ALCANCE_MAXIMO_ROTA_KM * percentual;
+        }
+
         public override string ToString()
         {
-            return $"{Nome} (ID: {Id.ToString()[..4]}...) | Status: {Status} | Capacidade: {CapacidadeMaxKg}kg | Alcance: {AlcanceMaxKm}km";
+            return $"{Nome} (ID: {Id.ToString()[..4]}...) | Status: {Status} | Capacidade: {CapacidadeMaxKg}kg | Bateria: {NivelBateriaPercentual:F1}%";
         }
     }
 }

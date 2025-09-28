@@ -9,6 +9,6 @@
     "\\DroneDeliverySimulator\\DroneDelivery.Domain\\Models",
     "\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services"
   ],
-  "SelectedNode": "\\DroneDeliverySimulator\\DroneDeliverySimulator.sln",
+  "SelectedNode": "\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\GerenciadorDeFrota.cs",
   "PreviewInSolutionExplorer": false
 }

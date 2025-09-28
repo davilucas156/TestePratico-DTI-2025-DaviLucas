@@ -3,16 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\services\\gerenciadordefrota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\services\\gerenciadordefrota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\enums\\dronestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\enums\\dronestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\enums\\prioridade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\enums\\prioridade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AB94642-1562-4D0B-83CE-850B303EDFD0}|DroneDelivery.Tests\\DroneDelivery.Tests.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.tests\\dronedelivery.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9AB94642-1562-4D0B-83CE-850B303EDFD0}|DroneDelivery.Tests\\DroneDelivery.Tests.csproj|solutionrelative:dronedelivery.tests\\dronedelivery.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\entities\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\entities\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\entities\\voo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\entities\\voo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD6D71A0-8940-4BE7-BE8C-D85D78B41322}|DroneDelivery.CLI\\DroneDelivery.CLI.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD6D71A0-8940-4BE7-BE8C-D85D78B41322}|DroneDelivery.CLI\\DroneDelivery.CLI.csproj|solutionrelative:dronedelivery.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\services\\gerenciadordefrota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\services\\gerenciadordefrota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\models\\ponto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\models\\ponto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\services\\calculadoraeuclidiana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\services\\calculadoraeuclidiana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\services\\isimuladordevoos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\services\\isimuladordevoos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\services\\simuladordevoos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,36 +51,8 @@
       "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\services\\igerenciadordefrota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\models\\ponto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\models\\ponto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\entities\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\entities\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AB94642-1562-4D0B-83CE-850B303EDFD0}|DroneDelivery.Tests\\DroneDelivery.Tests.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.tests\\dronedelivery.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9AB94642-1562-4D0B-83CE-850B303EDFD0}|DroneDelivery.Tests\\DroneDelivery.Tests.csproj|solutionrelative:dronedelivery.tests\\dronedelivery.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\services\\isimuladordevoos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\services\\isimuladordevoos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\services\\calculadoraeuclidiana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\services\\calculadoraeuclidiana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\enums\\prioridade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\enums\\prioridade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\enums\\dronestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\enums\\dronestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.domain\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E0B80A14-677A-4BEC-9D2B-50091269A3E9}|DroneDelivery.Domain\\DroneDelivery.Domain.csproj|solutionrelative:dronedelivery.domain\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD6D71A0-8940-4BE7-BE8C-D85D78B41322}|DroneDelivery.CLI\\DroneDelivery.CLI.csproj|c:\\users\\davil\\onedrive\\documentos\\github\\testepratico-dti-2025-davilucas\\dronedeliverysimulator\\dronedelivery.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD6D71A0-8940-4BE7-BE8C-D85D78B41322}|DroneDelivery.CLI\\DroneDelivery.CLI.csproj|solutionrelative:dronedelivery.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,17 +62,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.CLI\\Program.cs",
               "RelativeDocumentMoniker": "DroneDelivery.CLI\\Program.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.CLI\\Program.cs",
               "RelativeToolTip": "DroneDelivery.CLI\\Program.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAACQAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAJIBAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-26T19:47:23.572Z",
               "IsPinned": true,
@@ -84,109 +84,111 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "IGerenciadorDeFrota.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\IGerenciadorDeFrota.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Services\\IGerenciadorDeFrota.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\IGerenciadorDeFrota.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Services\\IGerenciadorDeFrota.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBcAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-27T17:48:54.776Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "SimuladorDeVoos.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\SimuladorDeVoos.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Services\\SimuladorDeVoos.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\SimuladorDeVoos.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Services\\SimuladorDeVoos.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAxwIwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-27T10:56:07.935Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ISimuladorDeVoos.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\ISimuladorDeVoos.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Services\\ISimuladorDeVoos.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\ISimuladorDeVoos.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Services\\ISimuladorDeVoos.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAIwBwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T10:55:21.213Z"
+              "WhenOpened": "2025-09-27T10:55:21.213Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "CalculadoraEuclidiana.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\CalculadoraEuclidiana.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Services\\CalculadoraEuclidiana.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\CalculadoraEuclidiana.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Services\\CalculadoraEuclidiana.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T10:42:34.769Z"
+              "WhenOpened": "2025-09-27T10:42:34.769Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Ponto.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Models\\Ponto.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Models\\Ponto.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Models\\Ponto.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Models\\Ponto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA1wA8AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-27T10:42:00.516Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "GerenciadorDeFrota.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\GerenciadorDeFrota.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Services\\GerenciadorDeFrota.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services\\GerenciadorDeFrota.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Services\\GerenciadorDeFrota.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAArwI4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIYAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-27T10:43:34.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Voo.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Entities\\Voo.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Entities\\Voo.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Entities\\Voo.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Entities\\Voo.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAkwIMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAmwGcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-27T10:44:14.171Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Drone.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Entities\\Drone.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Entities\\Drone.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Entities\\Drone.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Entities\\Drone.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAUwCkAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAqwEQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-27T10:44:06.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "DroneDelivery.Tests.csproj",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Tests\\DroneDelivery.Tests.csproj",
               "RelativeDocumentMoniker": "DroneDelivery.Tests\\DroneDelivery.Tests.csproj",
@@ -194,43 +196,47 @@
               "RelativeToolTip": "DroneDelivery.Tests\\DroneDelivery.Tests.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-27T11:24:06.444Z"
+              "WhenOpened": "2025-09-27T11:24:06.444Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "Prioridade.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Enums\\Prioridade.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Enums\\Prioridade.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Enums\\Prioridade.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Enums\\Prioridade.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T10:40:56.71Z"
+              "WhenOpened": "2025-09-27T10:40:56.71Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "DroneStatus.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Enums\\DroneStatus.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Enums\\DroneStatus.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Enums\\DroneStatus.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Enums\\DroneStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T10:41:41.828Z"
+              "WhenOpened": "2025-09-27T10:41:41.828Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "Pedido.cs",
               "DocumentMoniker": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Entities\\Pedido.cs",
               "RelativeDocumentMoniker": "DroneDelivery.Domain\\Entities\\Pedido.cs",
               "ToolTip": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\Entities\\Pedido.cs",
               "RelativeToolTip": "DroneDelivery.Domain\\Entities\\Pedido.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAIwCoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAwAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T10:43:53.175Z"
+              "WhenOpened": "2025-09-27T10:43:53.175Z",
+              "EditorCaption": ""
             }
           ]
         }
