@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\davil\\source\\repos\\DroneDeliverySimulator\\DroneDelivery.Domain\\DroneDelivery.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\DroneDelivery.Domain.csproj",
       "projectName": "DroneDelivery.Domain",
-      "projectPath": "C:\\Users\\davil\\source\\repos\\DroneDeliverySimulator\\DroneDelivery.Domain\\DroneDelivery.Domain.csproj",
+      "projectPath": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\DroneDelivery.Domain.csproj",
       "packagesPath": "C:\\Users\\davil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\davil\\source\\repos\\DroneDeliverySimulator\\DroneDelivery.Domain\\obj\\",
+      "outputPath": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

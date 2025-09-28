@@ -118,5 +118,17 @@ namespace DroneDelivery.Domain.Entities
             PesoTotalCarga += pedido.Peso;
             RotaPlanejada.Add(pedido.LocalizacaoCliente);
         }
+
+        public void AdicionarPacoteParaTeste(Pedido pedido, ICalculadoraDistancia calculadora)
+        {
+            // Apenas adiciona os dados
+            Pacotes.Add(pedido);
+            PesoTotalCarga += pedido.Peso;
+            RotaPlanejada.Add(pedido.LocalizacaoCliente);
+
+            // Calcula a nova rota
+            RecalcularDistanciaTotal(calculadora);
+
+        }
     }
 }

@@ -13,10 +13,11 @@ var calculadora = new CalculadoraEuclidiana();
 // Frota inicial (você pode ajustar os valores conforme o case)
 var frota = new List<Drone>
 {
-    new Drone("Mufasa", capacidadeMaxKg: 10.0, alcanceMaxKm: 20.0,velocidade: 6.0),
-    new Drone("Simba", capacidadeMaxKg: 8.0, alcanceMaxKm: 15.0, velocidade: 6.0),
-    new Drone("Timão", capacidadeMaxKg: 5.0, alcanceMaxKm: 10.0, velocidade: 6.0),
-    new Drone("Pumba", capacidadeMaxKg: 18.0, alcanceMaxKm: 8.0, velocidade : 6.0)
+    // Ajuste de velocidade para 60.0 km/h = 1 km/minuto
+    new Drone("Mufasa", capacidadeMaxKg: 10.0, alcanceMaxKm: 50.0,velocidade: 60.0),
+    new Drone("Simba", capacidadeMaxKg: 8.0, alcanceMaxKm: 50.0, velocidade: 60.0),
+    new Drone("Timão", capacidadeMaxKg: 5.0, alcanceMaxKm: 50.0, velocidade: 60.0),
+    new Drone("Pumba", capacidadeMaxKg: 18.0, alcanceMaxKm: 50.0    , velocidade : 60.0)
 };
 
 var gerenciador = new GerenciadorDeFrota(calculadora, frota);
@@ -28,7 +29,7 @@ var pedidosPendentes = new List<Pedido>();
 // --------------------------------------------------------
 // 2. FUNÇÃO PRINCIPAL: LOOP INTERATIVO
 // --------------------------------------------------------
-    
+
 ExecutarInterfaceCLI();
 
 // --------------------------------------------------------
@@ -93,11 +94,32 @@ void ExibirCabecalho()
     Console.Clear();
     Console.ForegroundColor = ConsoleColor.Cyan;
     Console.WriteLine("=================================================");
-    Console.WriteLine("    🚁 SIMULADOR DTI - GERENCIADOR DE FROTA 🚁");
+    Console.WriteLine("     SIMULADOR DTI - GERENCIADOR DE FROTA ");
     Console.WriteLine("=================================================");
     Console.ResetColor();
-    Console.WriteLine($"Frota Ativa: {frota.Count} drones ({frota.First().CapacidadeMaxKg}kg/{frota.First().AlcanceMaxKm}km, etc.)");
+    Console.WriteLine($"Frota Ativa: {frota.Count} drones ({string.Join(", ", frota.Select(d => d.Nome))})");
 }
+
+// NOVO MÉTODO: Explica a matemática por trás da simulação
+void ExibirExplicacaoMatematica()
+{
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine("\n=== COMO FUNCIONA O CÁLCULO DE ENTREGA (Malha X, Y) ===");
+    Console.ResetColor();
+
+    // Explicação da Distância (Pitágoras)
+    Console.WriteLine("1. **Distância (km):** Cada unidade no mapa (eixo X ou Y) corresponde a 1 km.");
+    Console.WriteLine("   A distância em linha reta (D) é calculada usando o Teorema de Pitágoras:");
+    Console.WriteLine("   D = RaizQuadrada((X2 - X1)² + (Y2 - Y1)²)");
+    Console.WriteLine("   Ex: De (0,0) para (3,4) a distância é 5 km.");
+
+    // Explicação do Tempo
+    Console.WriteLine("2. **Tempo (min):** O tempo total de entrega é estimado pela Distância e Velocidade do Drone (km/h).");
+    Console.WriteLine("   Tempo = (Distância Total / Velocidade) * 60.");
+    Console.WriteLine("   O ciclo de simulação avança 1 minuto por interação.");
+    Console.WriteLine("=======================================================");
+}
+
 
 void ExibirMenu()
 {
@@ -132,6 +154,10 @@ void AdicionarPedidoInterativo()
 {
     Console.Clear();
     ExibirCabecalho();
+
+    // NOVO: Chama a explicação matemática antes de pedir as coordenadas
+    ExibirExplicacaoMatematica();
+
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine("\n-- NOVO PEDIDO --");
     Console.ResetColor();
@@ -204,22 +230,49 @@ void IniciarSimulacao()
         Console.WriteLine($"\n📦 {novosVoos.Count} novo(s) Voo(s) PLANEJADO(s) e INICIADO(s)!");
         foreach (var voo in novosVoos)
         {
-            Console.WriteLine($"  -> {voo.DroneAlocado.Nome}: Peso {voo.PesoTotalCarga:F1}kg, Rota {voo.DistanciaTotalRotaKm:F1}km. {voo.Pacotes.Count} Pacotes.");
+            // Note que o TempoTotalEstimadoMinutos agora é calculado no Gerenciador
+            Console.WriteLine($"  -> {voo.DroneAlocado.Nome}: Peso {voo.PesoTotalCarga:F1}kg, Rota {voo.DistanciaTotalRotaKm:F1}km (Tempo Total: {voo.TempoTotalEstimadoMinutos:F1} min). {voo.Pacotes.Count} Pacotes.");
         }
 
         // 2. INICIAR VOOS
         simulador.IniciarVoos(novosVoos);
     }
+    // --- SEÇÃO CORRIGIDA PARA DAR FEEDBACK CLARO E DETALHADO ---
     else if (pedidosPendentes.Any())
     {
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine($"\n⚠️ {pedidosPendentes.Count} Pacotes ficaram pendentes. Nenhum drone disponível ou capacidade/alcance excedido.");
+        Console.WriteLine($"\n⚠️ {pedidosPendentes.Count} Pacotes ficaram pendentes. Motivo(s) da falha:");
         Console.ResetColor();
+
+        // Itera sobre todos os pedidos que o Gerenciador não conseguiu alocar
+        foreach (var pedido in pedidosPendentes)
+        {
+            // Chama o novo método de análise detalhada (implementado no GerenciadorDeFrota.cs)
+            var resultadoAnalise = gerenciador.AnalisarFalhaDeAlocacao(pedido);
+
+            Console.Write($"  -> Pedido ID {pedido.Id.ToString()[..4]} (Peso: {pedido.Peso:F1}kg, Destino: ({pedido.LocalizacaoCliente.X}, {pedido.LocalizacaoCliente.Y})): ");
+
+            // Verifica se a análise retornou uma falha (Peso ou Alcance)
+            if (resultadoAnalise.StartsWith("❌"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                // O resultado AnalisarFalhaDeAlocacao já contém a mensagem de erro e a DICA de limite!
+                Console.WriteLine(resultadoAnalise);
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(resultadoAnalise);
+                Console.ResetColor();
+            }
+        }
     }
+    
 
     // 3. PROCESSAR TEMPO (Simulador de Voos)
-    Console.WriteLine("\nProcessando 5 minutos de simulação...");
-    simulador.ProcessarCicloDeSimulacao(tempoDecorridoMinutos: 5.0);
+    Console.WriteLine("\nProcessando 1,3 minuto de simulação...");
+    simulador.ProcessarCicloDeSimulacao(tempoDecorridoMinutos: 1.3);
 
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine("\n✅ Ciclo de Simulação CONCLUÍDO. Use [3] para ver o status da Frota.");
@@ -234,6 +287,9 @@ void MostrarStatusFrota()
     Console.WriteLine("\n-- STATUS ATUAL DA FROTA --");
     Console.ResetColor();
 
+    // 1. Pega todos os voos em andamento (EmVoo)
+    var voosEmAndamento = simulador.GetVoosEmAndamento();
+
     foreach (var drone in frota)
     {
         var corStatus = drone.Status == DroneStatus.Idle ? ConsoleColor.Green : ConsoleColor.Yellow;
@@ -243,12 +299,31 @@ void MostrarStatusFrota()
         Console.Write(drone.Status);
         Console.ResetColor();
 
-        if (drone.Status != DroneStatus.Idle)
+        // 2. Tenta encontrar o voo associado a este drone
+        var vooAssociado = voosEmAndamento.FirstOrDefault(v => v.DroneAlocado == drone);
+
+        if (vooAssociado != null)
         {
-            Console.WriteLine($" - Localização: ({drone.LocalizacaoAtual.X}, {drone.LocalizacaoAtual.Y})");
+            // O drone está em voo, vamos calcular e mostrar o progresso
+            double tempoRestante = vooAssociado.TempoTotalEstimadoMinutos - vooAssociado.TempoDecorridoNoVooMinutos;
+
+            // Garante que o tempo restante não seja negativo (em caso de margem de erro ou conclusão)
+            if (tempoRestante < 0) tempoRestante = 0;
+
+            // 3. Exibe o progresso
+            Console.WriteLine($" - Localização: ({drone.LocalizacaoAtual.X:F1}, {drone.LocalizacaoAtual.Y:F1})");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine($"   ⏱️ Tempo Restante: {tempoRestante:F1} min (Total: {vooAssociado.TempoTotalEstimadoMinutos:F1} min)");
+            Console.ResetColor();
+        }
+        else if (drone.Status == DroneStatus.Carregando)
+        {
+            // Status Carregando (Voo foi planejado, mas ainda não entrou na simulação - útil se a iniciação fosse separada)
+            Console.WriteLine(" - Preparando para decolagem na Base.");
         }
         else
         {
+            // Status Idle
             Console.WriteLine(" - Pronto na Base.");
         }
     }

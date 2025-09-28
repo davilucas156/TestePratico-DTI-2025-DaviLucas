@@ -9,3 +9,15 @@ C:\Users\davil\source\repos\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debu
 C:\Users\davil\source\repos\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\refint\DroneDelivery.Domain.dll
 C:\Users\davil\source\repos\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\DroneDelivery.Domain.pdb
 C:\Users\davil\source\repos\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\ref\DroneDelivery.Domain.dll
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\bin\Debug\net8.0\DroneDelivery.Domain.deps.json
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\bin\Debug\net8.0\DroneDelivery.Domain.dll
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\bin\Debug\net8.0\DroneDelivery.Domain.pdb
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\DroneDelivery.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\DroneDelivery.Domain.AssemblyInfoInputs.cache
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\DroneDelivery.Domain.AssemblyInfo.cs
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\DroneDelivery.Domain.csproj.CoreCompileInputs.cache
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\DroneDelivery.Domain.sourcelink.json
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\DroneDelivery.Domain.dll
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\refint\DroneDelivery.Domain.dll
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\DroneDelivery.Domain.pdb
+C:\Users\davil\OneDrive\Documentos\GitHub\TestePratico-DTI-2025-DaviLucas\DroneDeliverySimulator\DroneDelivery.Domain\obj\Debug\net8.0\ref\DroneDelivery.Domain.dll

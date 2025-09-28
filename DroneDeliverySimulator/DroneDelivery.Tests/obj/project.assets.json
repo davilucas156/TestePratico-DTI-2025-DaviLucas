@@ -5530,11 +5530,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\davil\\source\\repos\\DroneDeliverySimulator\\DroneDelivery.Tests\\DroneDelivery.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Tests\\DroneDelivery.Tests.csproj",
       "projectName": "DroneDelivery.Tests",
-      "projectPath": "C:\\Users\\davil\\source\\repos\\DroneDeliverySimulator\\DroneDelivery.Tests\\DroneDelivery.Tests.csproj",
+      "projectPath": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Tests\\DroneDelivery.Tests.csproj",
       "packagesPath": "C:\\Users\\davil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\davil\\source\\repos\\DroneDeliverySimulator\\DroneDelivery.Tests\\obj\\",
+      "outputPath": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5555,8 +5555,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\davil\\source\\repos\\DroneDeliverySimulator\\DroneDelivery.Domain\\DroneDelivery.Domain.csproj": {
-              "projectPath": "C:\\Users\\davil\\source\\repos\\DroneDeliverySimulator\\DroneDelivery.Domain\\DroneDelivery.Domain.csproj"
+            "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\DroneDelivery.Domain.csproj": {
+              "projectPath": "C:\\Users\\davil\\OneDrive\\Documentos\\GitHub\\TestePratico-DTI-2025-DaviLucas\\DroneDeliverySimulator\\DroneDelivery.Domain\\DroneDelivery.Domain.csproj"
             }
           }
         }

@@ -3,11 +3,12 @@ using DroneDelivery.Domain.Enums;
 using DroneDelivery.Domain.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace DroneDelivery.Domain.Services
 {
     /// <summary>
-    /// Gerencia o ciclo de vida dos voos e a transição de estado dos drones.
+    /// Gerencia o ciclo de vida dos voos e a transição de estado dos drones, rastreando o progresso do tempo.
     /// </summary>
     public class SimuladorDeVoos : ISimuladorDeVoos
     {
@@ -32,18 +33,27 @@ namespace DroneDelivery.Domain.Services
                     // 2. Adiciona à lista de voos a serem processados
                     _voosEmAndamento.Add(voo);
 
+                    // 3. Reseta o tempo decorrido, caso o objeto Voo esteja sendo reusado (boa prática)
+                    voo.TempoDecorridoNoVooMinutos = 0.0;
+
                     Console.WriteLine($"[SIMULACAO] Voo {voo.Id.ToString()[..4]}... INICIADO. {voo.DroneAlocado.Nome} partiu da Base.");
                 }
                 // Se não estiver em Carregando, o Gerenciador de Frota fez algo errado, ou o drone já está ocupado.
             }
         }
 
+        /// <summary>
+        /// Avança a simulação pelo tempo especificado, atualizando o progresso dos voos.
+        /// </summary>
+        /// <param name="tempoDecorridoMinutos">A unidade de tempo a ser avançada (ex: 1.0, 5.0).</param>
+        // Dentro da classe SimuladorDeVoos.cs
+
         public void ProcessarCicloDeSimulacao(double tempoDecorridoMinutos)
         {
             // O algoritmo de simulação real é complexo, envolve calcular a posição exata, bateria, etc.
             // Para o básico, vamos simular a conclusão do voo após um certo tempo ou distância percorrida.
 
-            Console.WriteLine($"\n--- Processando Simulação. Tempo decorrido: {tempoDecorridoMinutos} minutos ---");
+            Console.WriteLine($"\n--- Processando Simulação. Tempo decorrido: {tempoDecorridoMinutos} minuto(s) ---");
 
             var voosConcluidos = new List<Voo>();
 
@@ -52,28 +62,77 @@ namespace DroneDelivery.Domain.Services
             {
                 var drone = voo.DroneAlocado;
 
-                // Simulação simplificada de "tempo de voo" baseado na distância total
-                // Assumimos que a velocidade média é 1 km/min (ou seja, Distancia = Tempo).
-                double tempoNecessarioParaConcluir = voo.DistanciaTotalRotaKm;
+                // 1. Acumula o tempo que passou neste ciclo
+                voo.TempoDecorridoNoVooMinutos += tempoDecorridoMinutos;
 
-                // Se o tempo decorrido total da simulação for maior ou igual ao tempo total de voo...
-                // (Aqui teríamos um controle de progresso mais detalhado, mas para o desafio, simplificamos)
-                if (tempoNecessarioParaConcluir < tempoDecorridoMinutos * 10) // Fator de aceleração da simulação
+                // 2. Calcula o tempo restante
+                var tempoRestanteMinutos = voo.TempoTotalEstimadoMinutos - voo.TempoDecorridoNoVooMinutos;
+
+                // Checa se o voo foi concluído
+                if (tempoRestanteMinutos <= 0)
                 {
+                    // O Voo terminou!
                     voosConcluidos.Add(voo);
 
                     // Atualiza o drone para o estado final
                     drone.Status = DroneStatus.Idle;
-                    drone.LocalizacaoAtual = Ponto.Base; // Assumimos que ele voltou para a base
+                    drone.LocalizacaoAtual = Ponto.Base; // VOLTOU para a base
 
+                    // Log de conclusão
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"[CONCLUIDO] {drone.Nome} completou o Voo {voo.Id.ToString()[..4]}... Total de pacotes: {voo.Pacotes.Count}.");
                     Console.WriteLine($"[STATUS] {drone.Nome} está agora: {drone.Status}");
+                    Console.ResetColor();
                 }
                 else
                 {
-                    // No mundo real, aqui você atualizaria a LocalizacaoAtual e a Bateria.
-                    // Por agora, apenas indicamos que ele está em voo.
-                    Console.WriteLine($"[ANDAMENTO] {drone.Nome} em voo. Resta aprox. {tempoNecessarioParaConcluir - (tempoDecorridoMinutos * 10)} km para o destino.");
+                    // O voo ainda está em andamento. ATUALIZAR POSIÇÃO.
+
+                    // --- NOVO CÁLCULO DE POSIÇÃO (INTERPOLAÇÃO LINEAR) ---
+
+                    // Premissa: Simulação de rota simplificada Base (0,0) -> Cliente (X,Y) -> Base (0,0).
+
+                    // 1. Ponto de Destino (Usamos a localização do primeiro pacote como destino)
+                    var destino = voo.Pacotes.First().LocalizacaoCliente;
+
+                    // 2. Tempo de ida (Metade do tempo total)
+                    var tempoDeIdaMinutos = voo.TempoTotalEstimadoMinutos / 2.0;
+
+                    double progresso;
+
+                    if (voo.TempoDecorridoNoVooMinutos <= tempoDeIdaMinutos)
+                    {
+                        // IDA (Base para Cliente)
+                        progresso = voo.TempoDecorridoNoVooMinutos / tempoDeIdaMinutos;
+                    }
+                    else
+                    {
+                        // VOLTA (Cliente para Base)
+                        var tempoDecorridoNaVolta = voo.TempoDecorridoNoVooMinutos - tempoDeIdaMinutos;
+
+                        // Calcula o tempo que falta para chegar à base
+                        var tempoRestanteVolta = tempoDeIdaMinutos - tempoDecorridoNaVolta;
+
+                        // O progresso é o tempo que falta para chegar na base, dividido pelo tempo total da volta.
+                        progresso = tempoRestanteVolta / tempoDeIdaMinutos;
+                    }
+
+                    // Garante que o progresso esteja entre 0 e 1 (por segurança)
+                    progresso = Math.Max(0, Math.Min(1, progresso));
+
+                    // Interpolação Linear: (Posição Inicial * (1-Progresso) + Posição Final * Progresso)
+                    // Como a Base (inicial e final) é (0,0), a fórmula simplifica para:
+                    var xAtual = destino.X * progresso;
+                    var yAtual = destino.Y * progresso;
+
+                    drone.LocalizacaoAtual = new Ponto(xAtual, yAtual);
+
+                    // --- FIM DO CÁLCULO DE POSIÇÃO ---
+
+                    // Para feedback visual claro:
+                    var distanciaRestanteKm = (tempoRestanteMinutos / 60.0) * drone.VelocidadeMediaKmh;
+
+                    Console.WriteLine($"[ANDAMENTO] {drone.Nome} em voo. Resta aprox. {distanciaRestanteKm:F1} km ({tempoRestanteMinutos:F1} min). Posição: ({xAtual:F1}, {yAtual:F1}).");
                 }
             }
 

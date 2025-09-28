@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DroneDeliverySimulator",
+    "\\DroneDeliverySimulator\\DroneDelivery.CLI",
+    "\\DroneDeliverySimulator\\DroneDelivery.Domain",
+    "\\DroneDeliverySimulator\\DroneDelivery.Domain\\Entities",
+    "\\DroneDeliverySimulator\\DroneDelivery.Domain\\Enums",
+    "\\DroneDeliverySimulator\\DroneDelivery.Domain\\Models",
+    "\\DroneDeliverySimulator\\DroneDelivery.Domain\\Services"
   ],
+  "SelectedNode": "\\DroneDeliverySimulator\\DroneDeliverySimulator.sln",
   "PreviewInSolutionExplorer": false
 }

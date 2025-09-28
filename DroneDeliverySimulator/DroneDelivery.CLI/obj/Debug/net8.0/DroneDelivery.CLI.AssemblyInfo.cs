@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DroneDelivery.CLI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58203979507eb9a6d06d303d489e30529fd2d644")]
 [assembly: System.Reflection.AssemblyProductAttribute("DroneDelivery.CLI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DroneDelivery.CLI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
