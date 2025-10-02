@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DroneDelivery.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58203979507eb9a6d06d303d489e30529fd2d644")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4a10a4cd9915dc2cb027db1b2cdfcf8b1881a1e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DroneDelivery.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DroneDelivery.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
