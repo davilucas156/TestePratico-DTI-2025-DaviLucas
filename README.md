@@ -8,23 +8,53 @@
 
 Este projeto é um simulador de gerenciamento de frotas de drones urbanos, focado na otimização da alocação de pacotes para o menor número de viagens possível. O sistema modela entregas, drones e seus voos em um mapa 2D de coordenadas, implementando uma lógica de simulação orientada a eventos para refletir o ciclo de vida de uma entrega.
 
-## ⚙️ Regras e Premissas Adotadas
+## ⚙️ Regras e Premissas Adotadas (Atualizado)
 
 Para a simulação, foram adotados os seguintes valores iniciais e regras:
 
-| Parâmetro | Valor Inicial Adotado | Unidade | Descrição |
-| :--- | :--- | :--- | :--- |
-| Capacidade Máxima do Drone | **10** | kg | Peso máximo que um drone pode transportar. |
-| Alcance Máximo do Drone | **20** | km | Distância máxima que um drone pode percorrer com uma única carga de bateria. |
-| Velocidade Média do Drone | **1** | km/min | Usada para simular o tempo de voo. |
-| Coordenada da Base (Hub) | **(0, 0)** | - | Ponto de partida e retorno de todos os drones. |
-| Prioridades | `Baixa`, `Média`, `Alta` | - | Define a ordem de processamento dos pacotes. |
+| Parâmetro            | Valor Adotado  | Unidade      | Descrição |
+|---------------------|---------------|-------------|-----------|
+| Malha da Cidade     | 50×50         | Coordenadas | O mapa 2D da cidade opera em uma malha quadriculada de 50×50 (do (0,0) ao (50,50)). |
+| Coordenada da Base (Hub) | (0, 0)    | -           | Ponto de partida e retorno de todos os drones. |
+| Velocidade Média do Drone | 60       | km/h (1 km/min) | Usada para simular o tempo de voo. |
+| Prioridades         | Baixa, Média, Alta | -       | Define a ordem de processamento dos pacotes. |
 
 **Regras Essenciais:**
 * Pacotes com peso superior à capacidade do drone são **rejeitados**.
 * A distância entre dois pontos (X1, Y1) e (X2, Y2) é calculada usando a **Distância Euclidiana** Distância = √((x2 - x1)² + (y2 - y1)²).
 * A lógica de alocação prioriza a **combinação de pacotes** que maximiza a utilização de capacidade e alcance por viagem.
 
+## ✈️ Frota de Drones e Capacidades
+
+A frota de drones inicial é composta por 3 unidades, com capacidades distintas:
+
+| Drone  | Capacidade Máx. (kg) | Alcance Máx. Base (km) |
+|--------|----------------------|-------------------------|
+| Pumba  | 18,0                 | 141,4                   |
+| Mufasa | 10,0                 | 141,4                   |
+| Simba  | 8,0                  | 141,4                   |
+
+## 🔋 Alcance Condicional ao Peso (Regra de Negócio Crítica)
+
+O alcance máximo teórico do drone é **141,4 km** (distância máxima na malha 50×50 - baseada na Distância Euclidiana).  
+Porém, o **Alcance Efetivo** da rota é condicionado ao peso do pacote, refletindo a física da bateria e carga.
+
+| Peso do Pacote | Alcance Efetivo |
+|----------------|----------------|
+| Até 3 kg       | 100% do Alcance Máximo |
+| Até 6 kg       | 80% do Alcance Máximo  |
+| Até 10 kg      | 70% do Alcance Máximo  |
+| Acima de 10 kg | 60% do Alcance Máximo  |
+
+### **Regras Essenciais:**
+- **Distância:** calculada por **Distância Euclidiana**
+- **Rejeição Lógica:**  
+Pacotes com peso superior à capacidade do drone ou cuja rota exceda o Alcance Efetivo são rejeitados e mantidos na **fila pendente**.
+- **Otimização:**  
+A lógica de alocação prioriza a combinação de pacotes que **maximiza a utilização de capacidade e alcance por viagem**.
+
+---
+  
 ## 💻 Arquitetura e Tecnologia
 
 O projeto foi desenvolvido em **C#** utilizando o Framework: .NET 8.0, seguindo uma arquitetura de separação de responsabilidades (ex: Domínio, Serviços, Testes). A lógica central é independente da interface.
@@ -79,15 +109,11 @@ Representa o agente de entrega.
 ---
 
 ### **5. Voo (Entidade)**
-Representa uma viagem planejada e em execução.
-
-** Métodos Chave: **
--AdicionarPacote(Pedido, ICalculadoraDistancia): Adiciona o pacote se as regras de peso e alcance forem atendidas.
-
-**Responsabilidades:**
-- Contém lista de pacotes (`Pacotes`).
-- Calcula o `PesoTotalCarga`.
-- Determina a `DistanciaTotalRotaKm` utilizando `ICalculadoraDistancia`.
+Representa uma viagem planejada e em execução.  
+Responsabilidades:
+- Contém a lista de pacotes.
+- Calcula o **PesoTotalCarga**.
+- Determina a **DistanciaTotalRotaKm**.
 
 ---
 
@@ -108,6 +134,12 @@ O núcleo de **otimização e alocação de pedidos**.
 3. Simula a rota completa (`Base → Entregas → Base`):
  - Se a distância total exceder o `AlcanceMaxKm`, o pacote é rejeitado.
 
+#### **Processo de Alocação:**
+- Itera sobre os drones disponíveis.
+- Tenta adicionar pedidos à rota, respeitando:
+1. **Capacidade** (`CapacidadeMaxKg`).
+2. **Alcance Efetivo**.
+
 ---
 
 ### **3. ISimuladorDeVoos / SimuladorDeVoos**
@@ -115,6 +147,29 @@ Gerencia o **ciclo de vida dos voos**:
 - Muda drones para `EmVoo` durante entregas.
 - Retorna drones para `Idle` ao final do voo.
 - Permite avançar o tempo da simulação.
+
+> Antes de confirmar, **simula a rota completa** (`Base → Entregas → Base`) para validar o alcance com base no peso total transportado.
+
+### **3. ISimuladorDeVoos / SimuladorDeVoos**
+Gerencia:
+- Ciclo de vida dos voos.
+- Avanço do tempo na simulação (3 minutos).
+- Mudança de status dos drones.
+
+---
+
+### **Etapas do Algoritmo:**
+1. **Priorização:**
+ - Ordenação dos pedidos por `Prioridade`.
+ - Em empate, ordenação por **Peso** (maior primeiro).
+
+2. **Alocação Gulosa:**
+ - Iteração sobre os drones disponíveis.
+ - Inclusão do próximo melhor pacote, respeitando restrições.
+
+3. **Checagem Dupla de Restrições:**
+ - **Capacidade:** peso do pacote não pode ultrapassar `CapacidadeMaxKg`.  
+ - **Alcance:** a rota simulada não pode exceder o **Alcance Efetivo**.
 
 ---
 
@@ -152,9 +207,11 @@ Se houver tempo, será criada uma API RESTful com os seguintes endpoints princip
     ```
 2.  Execute o projeto principal (o *entry point* da aplicação):
     ```bash
-    dotnet run --project NomeDoProjeto.CLI
+    dotnet run --project DroneDelivery.CLI
+
     ```
     *O sistema iniciará no modo Terminal, aguardando comandos para adicionar pedidos e iniciar a simulação.*
+    
 
 # 🧪 Testes Unitários
 
